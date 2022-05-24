@@ -1,0 +1,75 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {},
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier", "@typescript-eslint", "react-hooks"],
+  "ignorePatterns": [
+    "dist/",
+    "node_modules/",
+    "packages/",
+  ],
+  "rules": {
+    "no-case-declarations": "off",
+    "no-use-before-define": "off",
+    "no-unused-expressions": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/display-name": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "ignore",
+        "custom": "ignore",
+        "explicitSpread": "ignore",
+        "exceptions": [""]
+      }
+    ],
+    "dot-notation": [
+      "off",
+      {
+        "allowKeywords": false,
+        "allowPattern": "^[a-z]+(_[a-z]+)+$"
+      }
+    ],
+    "comma-dangle": "off",
+    "semi": "off",
+    "camelcase": "off",
+    "react/prop-types": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "peerDependencies": true }
+    ],
+    "@typescript-eslint/ban-ts-comment": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
