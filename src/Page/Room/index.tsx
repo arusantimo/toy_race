@@ -1,9 +1,9 @@
 const RoomPage = () => {
   return (
     <main>
-      <div>게임방</div>          
+      <div>게임방</div>
     </main>
   );
-}
+};
 
-export default RoomPage
+export default RoomPage;
