@@ -1,0 +1,86 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "ecmaVersion": 2021
+  },
+  "plugins": ["react", "prettier", "import", "@typescript-eslint", "react-hooks"],
+  "ignorePatterns": [
+    "dist/",
+    "node_modules/",
+    "packages/"
+  ],
+  "rules": {
+    "no-duplicate-imports": ["off", { "includeExports": true }],
+    "no-use-before-define": "off",
+    "no-unused-expressions": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/display-name": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".ts"] }],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "ignore",
+        "custom": "ignore",
+        "explicitSpread": "ignore",
+        "exceptions": [""]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "import/order": "off",
+    "dot-notation": [
+      "off",
+      {
+        "allowKeywords": false,
+        "allowPattern": "^[a-z]+(_[a-z]+)+$"
+      }
+    ],
+    "arrow-body-style": "off",
+    "react/function-component-definition": "off",
+    "no-shadow": "off",
+    "no-console": "off",
+    "import/no-named-as-default": "off",
+    "import/no-unresolved":"off",
+    "comma-dangle": "off",
+    "semi": "off",
+    "camelcase": "off",
+    "react/prop-types": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-duplicate-imports": "off",
+    "import/extensions": [
+      "off",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "paths": "./tsconfig.json",
+        "alwaysTryTypes": true,
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      },
+      "node": {
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      }
+    }
+  }
+}
