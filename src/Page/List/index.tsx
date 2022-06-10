@@ -1,20 +1,25 @@
-import { useObserver } from 'mobx-react';
-import ListItem from './component/Item';
 import useStore from '@/hook/injectStore';
+import ItemList from '@/page/List/Item';
+import { Link } from 'react-router-dom';
 
 const ListPage = () => {
-  console.log(12121212);
-  const { listStore } = useStore();
-  return useObserver(() => (
+  const { listStore, roomStore } = useStore();
+  return (
     <main>
-      <p>{listStore.list.size}</p>
-      {/* <div>게임방 리스트{ListStore.ssss.length}</div> */}
-      {[...listStore.list.keys()].map((k) => {
-        const d = listStore.list.get(k);
-        return d && <ListItem {...d} />;
-      })}
+      <p>현재 게임방 {listStore.list.size}개</p>
+      <p>
+        <Link
+          to="/room"
+          onClickCapture={() => {
+            roomStore.setCreatedID('');
+          }}
+        >
+          만들기
+        </Link>
+      </p>
+      <ItemList />
     </main>
-  ));
+  );
 };
 
 export default ListPage;

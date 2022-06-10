@@ -36,4 +36,18 @@ export default {
       ID: 'id3',
     },
   ],
+  User: [
+    {
+      ID: 'user1',
+      alias: '찐빵만두',
+    },
+    {
+      ID: 'user2',
+      alias: '달빛광장',
+    },
+    {
+      ID: 'user3',
+      alias: '커피꽁짜봇',
+    },
+  ],
 };
