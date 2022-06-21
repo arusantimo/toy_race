@@ -27,6 +27,7 @@
     "no-use-before-define": "off",
     "no-unused-expressions": "off",
     "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-no-useless-fragment": "off",
     "react/display-name": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".ts"] }],
     "react/jsx-props-no-spreading": [

@@ -3,9 +3,9 @@ import { observable, action, configure, makeObservable } from 'mobx';
 configure({ enforceActions: 'always' });
 
 class AuthStore {
-  connectionID = '';
-
   userID = '';
+
+  connectionID = '';
 
   constructor() {
     makeObservable(this, {
@@ -20,6 +20,6 @@ class AuthStore {
   };
 }
 
-const store = new AuthStore();
+const authStore = new AuthStore();
 
-export default store;
+export default authStore;

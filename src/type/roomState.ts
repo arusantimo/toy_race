@@ -5,7 +5,6 @@ export enum RoomState {
 
 export interface listItemType extends roomRequestPramType {
   state: RoomState;
-  userCounter: number;
 }
 
 export interface roomRequestPramType {

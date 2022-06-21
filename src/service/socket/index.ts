@@ -1,9 +1,11 @@
 import type { listItemType } from '@/type/roomState';
 import ListStore from '@/model/list/store';
 import AuthStore from '@/model/auth/store';
+// eslint-disable-next-line import/no-cycle
+import Room from '@/service/socket/room';
+
 // @ts-ignore
 import SocketMock from 'socket.io-mock';
-import Room from '@/service/socket/room';
 
 class SocketClient {
   socket;
@@ -39,8 +41,8 @@ class SocketClient {
     const { list } = message as {
       list: Array<listItemType>;
     };
-    ListStore.mutateList(list);
-    AuthStore.connected(Date.toString(), 'user4');
+    ListStore.setList(list);
+    AuthStore.connected(Date.toString(), 'user3');
   };
 
   postMassage = (target: string, data: any) => {
